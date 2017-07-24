@@ -1,30 +1,27 @@
 package data.structures;
 
 public class BinarySearchTreeCheck {
-    private boolean flag = true;
+    private Node previous;
 
-    boolean checkBST(Node root) {
+    public boolean checkBST(Node root) {
         return inOrderSearchFrom(root);
     }
 
-    private boolean inOrderSearchFrom(Node root) {
-        if (root.left != null) {
-            if (root.left.data < root.data) {
-                return inOrderSearchFrom(root.left);
-            } else {
+    private boolean inOrderSearchFrom(Node node) {
+        if (node != null) {
+
+            if (!(inOrderSearchFrom(node.left))) {
                 return false;
             }
-        }
 
-        if (root.right != null){
-            if (root.right.data > root.data) {
-                return inOrderSearchFrom(root.right);
-            } else {
+            if (previous != null && node.data <= previous.data) {
                 return false;
             }
-        }
 
-        return flag;
+            previous = node;
+            return inOrderSearchFrom(node.right);
+        }
+        return true;
     }
 
     class Node {
