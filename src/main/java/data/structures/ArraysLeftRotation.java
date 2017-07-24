@@ -18,6 +18,8 @@ public class ArraysLeftRotation {
         for (int i = 0; i < n; i++) {
             System.out.print(result[i] + " ");
         }
+
+        in.close();
     }
 
     private static int[] leftRotationBy(int rotation, int[] rotatedArray){

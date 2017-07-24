@@ -11,6 +11,8 @@ public class StringsMakingAnagrams {
         String a = in.next();
         String b = in.next();
         System.out.println(numberNeeded(a, b));
+
+        in.close();
     }
 
     private static int numberNeeded(String first, String second) {
