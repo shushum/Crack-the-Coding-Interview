@@ -16,6 +16,9 @@ public class MergeSortCountingInversions {
             }
 
             mergeSort(arr, 0, arr.length, new int[arr.length]);
+
+            System.out.println(counter);
+            counter = 0;
         }
 
     }
@@ -33,9 +36,6 @@ public class MergeSortCountingInversions {
         mergeSort(array, mid, endExclusive, buff);
 
         merger(array, startInclusive, mid, endExclusive, buff);
-
-        System.out.println(counter);
-        counter = 0;
     }
 
     private static void merger(int[] array, int startInclusive, int mid, int endExclusive, int[] buff) {
